@@ -166,3 +166,20 @@ class LibraryCatalog():
 
 
 #=============================================================
+def main():
+    Catalog = LibraryCatalog()
+
+    book1 = Book("Zeus", "Myth", "F1", "Unknown", 2233)
+    Catalog.add_item(book1)
+
+    DVD1 = DVD("Fire", "Science", "F2", "Who", "Science", 120)
+    Catalog.add_item(DVD1)
+    DVD1.get_details()
+
+    Catalog.find_item_by_title("Zeus")
+    Catalog.check_out_item(book1)
+    Catalog.return_in_item(book1)
+    Catalog.remove_item(book1)
+
+#==============================================================
+main()
