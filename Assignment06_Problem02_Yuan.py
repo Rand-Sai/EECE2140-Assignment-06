@@ -41,3 +41,18 @@ class CommissionEmployee(Employee):
     def calculate_salary(self):
         salary = self.commission_rate/100 * self.total_sale
         print('Your salary is: $' + str(salary))
+
+#-----------------------------------------------------
+def main():
+    employees = [
+        HourlyEmployee('Jack', 'PartTime', 25, 400),
+        SalariedEmployee('Jason', 'Senior Designer', 60000),
+        CommissionEmployee('Jaclyn', 'Sales', 12, 7000000)
+        ]
+    
+    #iterate
+    for employee in employees:
+        employee.calculate_salary()
+
+#----------------------------------------------------------
+main()
