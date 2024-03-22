@@ -53,3 +53,21 @@ class Triangle(Shape):
         p = self.side1 + self.side2 + self.side3
         print("Triangle perimeter = " + str(p))
 
+#--------------------------------------------------
+def main():
+    #list of shapes
+    shapes = [
+        Circle(2),
+        Circle(7),
+        Rectangle(1, 2),
+        Rectangle(7, 8),
+        Triangle(1, 2, 3),
+        Triangle(7, 8, 9),
+    ]
+    #iteratre
+    for shape in shapes:
+        shape.area()
+        shape.perimeter()
+
+#--------------------------------------------------------
+main()
