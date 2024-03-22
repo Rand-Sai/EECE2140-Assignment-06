@@ -126,3 +126,43 @@ class Journal(LibraryItem):
         print("Issue Number: " + str(self.issue_number) + "\n")
 
 
+class LibraryCatalog():
+    def __init__(self):
+        self.catalog = []
+
+    def add_item(self, target_item):
+        if target_item not in self.catalog:
+            self.catalog.append(target_item)
+            print("Item appended.\n")
+        else:
+            print("Item exists in the catalog.\n")
+    
+    def remove_item(self, target_item):
+        if target_item in self.catalog:
+            self.catalog.remove(target_item)
+            print("Item removed.\n")
+        else:
+            print("Could not find item in the catalog.\n")
+    
+    def find_item_by_title(self, title):
+        for item in self.catalog:
+            if item.title == title:
+                return item  # Return the found item
+        print("Could not find item with this title.\n")
+            
+    def check_out_item(self, target_item):
+        if target_item in self.catalog:
+            target_item.check_out()
+            print("Item checked out.\n")
+        else:
+            print("Failed.\n")
+        
+    def return_in_item(self, target_item):
+        if target_item in self.catalog:
+            target_item.return_item()
+            print("Item returned.\n")
+        else:
+            print("Failed.\n")
+
+
+#=============================================================
