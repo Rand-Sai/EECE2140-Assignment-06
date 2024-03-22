@@ -14,3 +14,30 @@ class Employee:
     def calculate_salary(self):
         pass
 
+class HourlyEmployee(Employee):
+    def __init__(self, name, position, wage, hours):
+        super().__init__(name, position)
+        self.wage = wage
+        self.hours = hours
+
+    def calculate_salary(self):
+        salary = self.wage * self.hours
+        print('Your salary is: $' + str(salary))
+
+class SalariedEmployee(Employee):
+    def __init__(self, name, position, salary):
+        super().__init__(name, position)
+        self.salary =salary
+
+    def calculate_salary(self):
+        print('Your annual salary is: $' + str(self.salary))
+
+class CommissionEmployee(Employee):
+    def __init__(self, name, position, commission_rate, total_sale):
+        super().__init__(name, position)
+        self.commission_rate = commission_rate
+        self.total_sale = total_sale
+
+    def calculate_salary(self):
+        salary = self.commission_rate/100 * self.total_sale
+        print('Your salary is: $' + str(salary))
