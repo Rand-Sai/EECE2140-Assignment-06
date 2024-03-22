@@ -20,3 +20,27 @@
 # • find_item_by_title(), which searches for an item by title and returns it.
 # • check_out_item(), which checks out an item by calling its check_out() method.
 # • return_item(), which returns an item by calling its return_item() method.
+
+
+class LibararyItem:
+    def __init__(self, title, subject, location):
+        self.title = title
+        self.subject = subject
+        self.location = location
+        self.checked_out = False
+
+    def check_out():
+        pass
+
+    def return_item():
+        pass
+
+    def get_details(self):
+        print("Title: " + str(self.title) + "\n")
+        print("Subject: " + str(self.subject) + "\n")
+        print("Location: " + str(self.location) + "\n")
+        if self.checked_out:
+            print("Status: Checked out.\n")
+        else:
+            print("Status: Returned.\n")
+
