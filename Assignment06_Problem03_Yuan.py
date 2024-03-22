@@ -22,7 +22,7 @@
 # • return_item(), which returns an item by calling its return_item() method.
 
 
-class LibararyItem:
+class LibraryItem:
     def __init__(self, title, subject, location):
         self.title = title
         self.subject = subject
@@ -43,4 +43,86 @@ class LibararyItem:
             print("Status: Checked out.\n")
         else:
             print("Status: Returned.\n")
+
+
+class Book(LibraryItem):
+    def __init__(self, title, subject, location, author, ISBN):
+        super().__init__(title, subject, location)
+        self.author = author
+        self.ISBN = ISBN
+
+    def check_out(self):
+        if not self.checked_out:
+            self.checked_out = True
+            print("Check out success.\n")
+        else:
+            print("Could not check out.\n")
+
+
+    def return_item(self):
+        if self.checked_out:
+            self.checked_out = False
+            print("Return success.\n")
+        else:
+            print("Could not return.\n")
+
+    def get_details(self):
+        super().get_details()
+        print("Author: " + str(self.author) + "\n")
+        print("ISBN: " + str(self.ISBN) + "\n")
+
+class DVD(LibraryItem):
+    def __init__(self, title, subject, location, director, genre, run_time):
+        super().__init__(title, subject, location)
+        self.director = director
+        self.genre = genre
+        self.run_time = run_time
+    
+    def check_out(self):
+        if not self.checked_out:
+            self.checked_out = True
+            print("Check out success.\n")
+        else:
+            print("Could not check out.\n")
+
+
+    def return_item(self):
+        if self.checked_out:
+            self.checked_out = False
+            print("Return success.\n")
+        else:
+            print("Could not return.\n")
+
+    def get_details(self):
+        super().get_details()
+        print("Director: " + str(self.director) + "\n")
+        print("Genre: " + str(self.genre) + "\n")
+        print("Run Time: " + str(self.run_time) + "min.\n")
+
+class Journal(LibraryItem):
+    def __init__(self, title, subject, location, volume, issue_number):
+        super().__init__(title, subject, location)
+        self.volume = volume
+        self.issue_number = issue_number
+
+    def check_out(self):
+        if not self.checked_out:
+            self.checked_out = True
+            print("Check out success.\n")
+        else:
+            print("Could not check out.\n")
+
+
+    def return_item(self):
+        if self.checked_out:
+            self.checked_out = False
+            print("Return success.\n")
+        else:
+            print("Could not return.\n")
+
+    def get_details(self):
+        super().get_details()
+        print("Volume: " + str(self.volume) + "\n")
+        print("Issue Number: " + str(self.issue_number) + "\n")
+
 
